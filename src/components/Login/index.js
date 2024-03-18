@@ -1,15 +1,19 @@
 import React from 'react'
 import {useState} from 'react'
 import './index.css'
+import { Navigate } from 'react-router-dom'
 
 const  Login= () => {
   const [mail,setMail] = useState('')//using react hooks
   const [password,setPassword]=useState('')
+  const [isLoggedin,setLoggedin]=useState(false)
   const onFormSubmission = e => {
-    e.preventDefault()
+    setLoggedin(!isLoggedin)
     
   }
   return (
+    <div>
+    { isLoggedin? <Navigate to="/dashboard" />:
     <div className='mainContainer'>
         <div className='brandSection'>
             <h1 className='brandName'>Board.</h1>
@@ -33,11 +37,13 @@ const  Login= () => {
                 <input type="email" id="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Enter email'/>
                 </div>
                 <p className='highlighter'>Forgot password ?</p>
-                <button type="submit" onSubmit={()=>onFormSubmission()} className='submitBtn'>Sign In</button>
+                <button type="submit" onClick={()=>onFormSubmission()} className='submitBtn'>Sign In</button>
             </div>
             <p className='register'>Don't have an account ? <span className='highlighter'>Register here</span></p>
         </div>
     </div>
+  }
+  </div>
   )
 }
 export default Login
