@@ -3,7 +3,7 @@ import {useState} from 'react'
 import './index.css'
 
 const  Login= () => {
-  const [mail,setMail] = useState('')
+  const [mail,setMail] = useState('')//using react hooks
   const [password,setPassword]=useState('')
   const onFormSubmission = e => {
     e.preventDefault()

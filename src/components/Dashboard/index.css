@@ -1,0 +1,20 @@
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+}
+.sideBarContainer{
+    width:20vw;
+    background-color: #000000;
+    color:white;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    margin:20px;
+    justify-content: space-around;
+    width:200px;
+}

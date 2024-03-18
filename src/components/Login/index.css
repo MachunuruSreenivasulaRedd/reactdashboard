@@ -1,7 +1,6 @@
 .mainContainer{
     display: flex;
     flex-direction: row;
-
 }
 .brandSection{
     width:40vw;
@@ -11,6 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content:center;
+    align-items: center;
 }
 .brandName{
     font-weight: 700;
