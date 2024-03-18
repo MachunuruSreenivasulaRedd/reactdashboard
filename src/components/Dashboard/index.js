@@ -23,6 +23,14 @@ export default class Dashboard extends Component {
             <li className='item'>Contact Us</li>
             </ul>
         </div>
+        <div className='contentContainer'>
+          <div className='statsContainer'>
+            <div className='first'></div>
+            <div className='second'></div>
+            <div className='third'></div>
+            <div className='fourth'></div>
+          </div>
+        </div>
       </div>
     )
   }
