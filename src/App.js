@@ -1,17 +1,37 @@
-import './App.css';
-import Dashboard from './components/Dashboard';
-import Home from './components/Home';
-import Login from './components/Login';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import React, {useState} from 'react';
+import Navbar from "./components/Navbar";
+import { Home } from './components/Home';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
 
-const App = () => (
-        <BrowserRouter>
-      <Routes>
-         <Route exact path="/" element={<Home />}/>
-         <Route exact path="/login" element={<Login />}/>
-         <Route exact path="/dashboard" element={<Dashboard />} />
-      </Routes>
-      </BrowserRouter>
-  )
+function App() {
+	const [navVisible, showNavbar] = useState(false);
+
+	return (
+		<BrowserRouter >
+			<div className="App">
+				<Navbar visible={ navVisible } show={ showNavbar } />
+				<Routes>
+					<Route path='/' element={<Home visible={navVisible}/>}/>
+					<Route path='/organizations' element={
+						<div className={!navVisible ? "page" : "page page-with-navbar"}>
+							<h1>organizations</h1>
+						</div>
+					}/>
+					<Route path='/Assets' element={
+						<div className={!navVisible ? "page" : "page page-with-navbar"}>
+							<h1>assets</h1>
+						</div>
+					}/>
+					<Route path='/settings' element={
+						<div className={!navVisible ? "page" : "page page-with-navbar"}>
+							<h1>Settings</h1>
+						</div>
+					}/>
+				</Routes>
+			</div>
+		</BrowserRouter>
+  );
+}
 
 export default App;
