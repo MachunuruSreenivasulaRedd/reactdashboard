@@ -1,0 +1,30 @@
+.homeContainer{
+    background-color: black;
+    padding-top: 30px;
+    min-height:110vh;
+}
+.sideHomeContainer{
+    background-color: black;
+    padding-top: 30px;
+    min-height:120vh;
+}
+.chart{
+    background-color: #323232;
+    border-radius: 8px;
+    width:fit-content;
+    padding: 10px;
+    margin-left:10px;
+}
+@media  (min-width:768px) {
+    .homeContainer{
+        padding-left: 19%;
+    }
+    .sideHomeContainer{
+        padding-left: 2%;
+        background-color: black;
+    }
+    .chart{
+        margin-left:30px;
+        
+    }
+}
